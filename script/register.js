@@ -198,7 +198,7 @@ async function postData() {
         let result = await response.json();
         alert("Registration successful.");
 
-        window.location.href = "./login.html";
+        window.location.href = "../index.html";
     }
     catch (error) {
         alert("Failed to register. Please try again.")
