@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 65px;
+    background-color: white;
+    box-shadow: 5px 0px 10px 0px rgb(109, 109, 109);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 70px;
+    z-index: 10;
+}
+
+#logo {
+    width: 55px;
+    height: 55px;
+    margin-right: 850px;
+    cursor: pointer;
+}
+
+#myCourseLetter {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#myCourseLetter:hover {
+    background-color: rgb(243, 243, 244);
+}
+
+#profile {
+    margin-right: 60px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.courseContainer {
+    margin: 180px 80px 80px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 60px;
+}
+
+.course {
+    padding: 10px;
+    width: 250px;
+    height: 350px;
+    border: 1px solid rgb(184, 184, 184);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.course:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 8.5px 0px rgb(184, 184, 184);
+}
+
+
+.image {
+    width: 135px;
+    height: 135px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.courseName {
+    text-align: center;
+    color: rgb(61, 61, 61);
+}
+
+.description {
+    color: rgb(61, 61, 61);
+    font-size: 15px;
+}
+
+
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popupBox {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px #000;
+}
+
+.popupBox button {
+    margin: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+}

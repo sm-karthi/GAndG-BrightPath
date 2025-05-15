@@ -1,3 +1,9 @@
+
+let isLogin = localStorage.getItem("isLogin");
+if (isLogin) {
+    window.location.href = "../pages/dashboard.html";
+}
+
 let userEmail = document.getElementById("userEmail");
 let userPassword = document.getElementById("userPassword");
 
@@ -51,6 +57,8 @@ async function getData() {
             return;
         }
 
+        localStorage.setItem("isLogin", true);
+        localStorage.setItem("email", userEmail.value);
 
         alert("Login successful.");
         window.location.href = "../pages/dashboard.html";

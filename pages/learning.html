@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - BrightPath</title>
-
-    <link rel="stylesheet" href="../styles/dashboard.css">
+    <title>Learning - BrightPath</title>
+    <link rel="stylesheet" href="../styles/learning.css">
 
     <link rel="icon" href="../images/top-logo.png">
 
@@ -28,6 +27,8 @@
         <nav class="navbar">
             <img src="../images/logo.png" alt="website logo" id="logo" draggable="false">
 
+            <p id="homeLetter">Home</p>
+
             <p id="myCourseLetter">My Course</p>
 
             <i class="fas fa-user" id="profile"></i>
@@ -35,12 +36,28 @@
     </header>
 
     <main>
-        <div class="courseContainer" id="courseContainer">
+
+        <i class="fa-solid fa-left-long" id="arrowIcon" title="Go back"></i>
+
+        <div class="learningContainer" id="learningContainer">
+            <h1 id="courseName"></h1>
+
+            <div class="descriptionDiv">
+                <p id="description"></p>
+
+            </div>
+
+            <div class="imgAndEnrollDiv">
+                <img alt="Course image" id="courseImg">
+                <button id="enrollBtn">Enroll Now</button>
+            </div>
+
 
         </div>
+
     </main>
 
-    <script src="../script/dashboard.js"></script>
+    <script src="../script/learning.js"></script>
 </body>
 
 </html>
