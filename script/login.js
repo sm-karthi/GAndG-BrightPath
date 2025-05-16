@@ -1,7 +1,7 @@
 
 let isLogin = localStorage.getItem("isLogin");
 if (isLogin) {
-    window.location.href = "../pages/dashboard.html";
+    window.location.href = "../pages/user/dashboard.html";
 }
 
 let userEmail = document.getElementById("userEmail");
@@ -61,7 +61,7 @@ async function getData() {
         localStorage.setItem("email", userEmail.value);
 
         alert("Login successful.");
-        window.location.href = "../pages/dashboard.html";
+        window.location.href = "../pages/user/dashboard.html";
 
     }
     catch (error) {

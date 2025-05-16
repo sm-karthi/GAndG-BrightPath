@@ -6,7 +6,7 @@ logo.onclick = function () {
 
 let myCourseLetter = document.getElementById("myCourseLetter");
 myCourseLetter.onclick = function () {
-    window.location.href = "../pages/myCourse.html";
+    window.location.href = "myCourse.html";
 }
 
 let courseContainer = document.getElementById("courseContainer");
@@ -26,7 +26,8 @@ async function loadCourses() {
 
             let img = document.createElement("img");
             img.setAttribute("class", "image");
-            img.setAttribute("src", course.thumbnailURL)
+            img.setAttribute("src", course.thumbnailURL);
+            img.setAttribute("draggable", "false");
 
 
             courseImgDiv.appendChild(img);
@@ -53,7 +54,7 @@ async function loadCourses() {
 
             courseDiv.onclick = function () {
 
-                window.location.href = `../pages/learning.html?id=${course.id}`
+                window.location.href = `learning.html?id=${course.id}`
 
             }
 

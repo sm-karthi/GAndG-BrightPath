@@ -11,7 +11,7 @@ myCourseLetter.onclick = function () {
 
 let homeLetter = document.getElementById("homeLetter");
 homeLetter.onclick = function(){
-    window.location.href = "../index.html"
+    window.location.href = "dashboard.html"
 }
 
 let arrowIcon = document.getElementById("arrowIcon");
@@ -56,6 +56,7 @@ async function loadCourses() {
                 let img = document.createElement("img");
                 img.setAttribute("class", "image");
                 img.setAttribute("src", course.thumbnailURL);
+                img.setAttribute("draggable", "false");
 
                 courseImgDiv.appendChild(img);
 
@@ -77,7 +78,7 @@ async function loadCourses() {
                 courseDiv.appendChild(courseDetails);
 
                 courseDiv.onclick = function(){
-                    window.location.href = `../pages/learning.html?id=${course.id}`;
+                    window.location.href = `learning.html?id=${course.id}`;
                 }
 
                 courseContainer.appendChild(courseDiv);

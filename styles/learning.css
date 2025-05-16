@@ -110,8 +110,12 @@ body {
     border-radius: 10px;
 }
 
+.notEnrollModuleDiv{
+    margin-top: 20px;
+}
+
 .moduleDiv {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .moduleName{
@@ -122,10 +126,13 @@ body {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .resourceName {
     width: fit-content;
+    
 }
 
 #enrollBtn{
@@ -141,4 +148,21 @@ body {
 #enrollBtn:hover{
     cursor: pointer;
     background-color: rgb(233, 24, 45);
+}
+
+.modulesWrapper {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.moduleDiv, .notEnrollModuleDiv {
+    width: 300px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 30px;
 }
