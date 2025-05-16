@@ -22,34 +22,34 @@ body {
     z-index: 10;
 }
 
-#logo {
+.logo {
     width: 55px;
     height: 55px;
-    margin-right: 710px;
+    margin-right: 720px;
     cursor: pointer;
 }
 
-#myCourseLetter {
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-#myCourseLetter:hover {
-    background-color: rgb(243, 243, 244);
-}
-
-#homeLetter {
+.myCourseLetter {
     cursor: pointer;
     padding: 5px;
     border-radius: 5px;
 }
 
-#homeLetter:hover {
+.myCourseLetter:hover {
     background-color: rgb(243, 243, 244);
 }
 
-#profile {
+.homeLetter {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.homeLetter:hover {
+    background-color: rgb(243, 243, 244);
+}
+
+.profile {
     margin-right: 60px;
     border: 1px solid black;
     border-radius: 50%;
@@ -58,7 +58,7 @@ body {
     cursor: pointer;
 }
 
-#arrowIcon {
+.arrowIcon {
     font-size: 1.1rem;
     background-color: rgb(248, 74, 91);
     width: fit-content;
@@ -71,7 +71,7 @@ body {
     cursor: pointer;
 }
 
-#arrowIcon:hover {
+.arrowIcon:hover {
     background-color: rgb(233, 24, 45);
 }
 
@@ -79,7 +79,7 @@ body {
     margin: 20px 100px 100px 80px;
 }
 
-#courseName {
+.courseName {
     text-align: center;
     color: rgb(72, 72, 72);
 }
@@ -104,7 +104,7 @@ body {
     border-radius: 10px;
 }
 
-#courseImg {
+.courseImg {
     width: 300px;
     height: 300px;
     border-radius: 10px;
@@ -135,7 +135,7 @@ body {
     
 }
 
-#enrollBtn{
+.enrollBtn{
     background-color: rgb(248, 74, 91);
     width: 80%;
     height: 30px;
@@ -145,7 +145,7 @@ body {
     font-size: 15px;
 }
 
-#enrollBtn:hover{
+.enrollBtn:hover{
     cursor: pointer;
     background-color: rgb(233, 24, 45);
 }

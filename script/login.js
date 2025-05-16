@@ -1,8 +1,13 @@
 
 let isLogin = localStorage.getItem("isLogin");
-if (isLogin) {
+
+if (isLogin === "USER") {
     window.location.href = "../pages/user/dashboard.html";
+} 
+else if(isLogin === "ADMIN") {
+    window.location.href = "../pages/admin/dashboard.html"
 }
+
 
 let userEmail = document.getElementById("userEmail");
 let userPassword = document.getElementById("userPassword");
@@ -57,11 +62,25 @@ async function getData() {
             return;
         }
 
-        localStorage.setItem("isLogin", true);
+        
         localStorage.setItem("email", userEmail.value);
 
         alert("Login successful.");
-        window.location.href = "../pages/user/dashboard.html";
+
+        let admin = userData.find(function (a) {
+            return a.role === "ADMIN";
+        })
+
+        if (admin) {
+            localStorage.setItem("isLogin", "ADMIN");
+            window.location.href = "../pages/admin/dashboard.html";
+        } else {
+            localStorage.setItem("isLogin", "USER");
+            window.location.href = "../pages/user/dashboard.html";
+        }
+
+
+
 
     }
     catch (error) {

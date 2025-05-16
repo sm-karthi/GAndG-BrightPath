@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning - BrightPath</title>
-    <link rel="stylesheet" href="../../styles/learning.css">
+    <title>Admin - BrightPath</title>
+
+    <link rel="stylesheet" href="../../styles/adminDashboard.css">
 
     <link rel="icon" href="../../images/top-logo.png">
 
@@ -23,41 +24,23 @@
 
 <body>
 
-    <header>
+     <header>
         <nav class="navbar">
             <img src="../../images/logo.png" alt="website logo" id="logo" class="logo" draggable="false">
 
-            <p id="homeLetter" class="homeLetter">Home</p>
-
-            <p id="myCourseLetter" class="myCourseLetter">My Course</p>
+            <p id="addCoureseLetter" class="addCoureseLetter">Add Course</p>
 
             <i class="fas fa-user profile" id="profile"></i>
         </nav>
     </header>
 
     <main>
-
-        <i class="fa-solid fa-left-long arrowIcon" id="arrowIcon" title="Go back"></i>
-
-        <div class="learningContainer" id="learningContainer">
-            <h1 id="courseName" class="courseName"></h1>
-
-            <div class="descriptionDiv">
-                <p id="description"></p>
-
-            </div>
-
-            <div class="imgAndEnrollDiv">
-                <img alt="Course image" id="courseImg" class="courseImg" draggable="false">
-                <button id="enrollBtn" class="enrollBtn">Enroll Now</button>
-            </div>
-
+        <div class="courseContainer" id="courseContainer">
 
         </div>
-
     </main>
 
-    <script src="../../script/learning.js"></script>
+    <script src="../../script/adminDashboard.js"></script>
 </body>
 
 </html>
