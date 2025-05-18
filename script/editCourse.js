@@ -95,8 +95,60 @@ addModuleBtn.onclick = function () {
 
 
 
-addCourseForm.onsubmit = function (event){
-    event.preventDefault();
+let params = new URLSearchParams(window.location.search);
+let courseId = params.get("id");
+
+
+async function populateCourseForm(courseId) {
+    try {
+        let response = await fetch(`https://68218a3c259dad2655af85dc.mockapi.io/courses/${courseId}`);
+        let course = await response.json();
+
+        container.innerHTML = "";
+
+        document.getElementById("title").value = course.title;
+        document.getElementById("description").value = course.description;
+        document.getElementById("category").value = course.category;
+        document.getElementById("thumbnailUrl").value = course.thumbnailURL;
+
+        course.module.forEach(function (mod, index) {
+            createModule();
+
+            let moduleBoxes = document.querySelectorAll(".moduleBox");
+            let currentModuleBox = moduleBoxes[index];
+            let moduleTitleInput = currentModuleBox.querySelector(".moduleTitle");
+            let resourceContainer = currentModuleBox.querySelector(".resourceContainer");
+
+            moduleTitleInput.value = mod.title;
+
+            mod.resources.forEach(function (resource, i) {
+                addResource(resourceContainer);
+
+                let resourceGroups = resourceContainer.querySelectorAll(".resourceGroup");
+                let currentResourceGroup = resourceGroups[i];
+                let inputs = currentResourceGroup.querySelectorAll("input");
+
+                inputs[0].value = resource.title;
+                inputs[1].value = resource.url;
+            });
+        });
+
+    } catch (err) {
+        console.error("Error loading course:", err);
+    }
+}
+
+if (courseId) {
+    populateCourseForm(courseId);
+}
+
+
+
+
+
+
+addCourseForm.onsubmit = function(e) {
+    e.preventDefault();
 
     let title = document.getElementById("title").value;
     let description = document.getElementById("description").value;
@@ -140,27 +192,28 @@ addCourseForm.onsubmit = function (event){
         module: modules
     };
 
-    addCourse(courseData);
+    updateCourse(courseData);
 
+};
+
+
+
+async function updateCourse(courseData) {
     
-}
-
-
-
-async function addCourse(courseData){
-
-     try {
-        let response = await fetch("https://68218a3c259dad2655af85dc.mockapi.io/courses", {
-            method: "POST",
+    try {
+        await fetch(`https://68218a3c259dad2655af85dc.mockapi.io/courses/${courseId}`, {
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(courseData)
         });
 
-        let result = await response.json();
-        console.log("Course submitted:", result);
+        console.log("Course updated:", courseData);
+        
+        alert("Course updated successfully!");
+        window.location.href = "dashboard.html";
     } catch (error) {
-        console.error("Submission error:", error);
+        console.error("Update failed:", error);
     }
 }

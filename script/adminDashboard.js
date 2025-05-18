@@ -60,6 +60,14 @@ async function loadCourses() {
             deleteBtn.setAttribute("class", "deleteBtn");
             deleteBtn.innerText = "Delete";
 
+            editBtn.onclick = function(){
+                window.location.href = `editCourse.html?id=${course.id}`;
+            }
+
+            deleteBtn.onclick = function () {
+                deleteCourse(course.id, courseDiv);
+            };
+
             editAndDeleteBtns.appendChild(editBtn);
             editAndDeleteBtns.appendChild(deleteBtn);
 
@@ -81,3 +89,17 @@ loadCourses();
 
 
 
+async function deleteCourse(courseId, courseElement) {
+    if (confirm("Are you sure you want to delete this course?")) {
+        try {
+            await fetch(`https://68218a3c259dad2655af85dc.mockapi.io/courses/${courseId}`, {
+                method: "DELETE"
+            });
+            courseElement.remove();
+            alert("Course deleted successfully.");
+        } catch (error) {
+            console.error("Error deleting course:", error);
+            alert("Failed to delete course.");
+        }
+    }
+}
