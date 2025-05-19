@@ -20,7 +20,7 @@ myCourseLetter.onclick = function () {
 }
 
 let profile = document.getElementById("profile");
-profile.onclick = function(){
+profile.onclick = function () {
     window.location.href = "../../pages/profile.html"
 }
 
@@ -37,9 +37,11 @@ let modulesWrapper = document.createElement("div");
 modulesWrapper.className = "modulesWrapper";
 
 let enrollBtn = document.getElementById("enrollBtn");
-enrollBtn.onclick = function () {
-    addEnrolled(courseId);
+enrollBtn.onclick = async function () {
+    await addEnrolled(courseId);
+    window.location.reload();
 }
+
 
 async function getCourse(id) {
     try {
@@ -127,35 +129,30 @@ async function getCourse(id) {
 }
 
 
-getCourse(courseId);
-
-
 
 
 async function addEnrolled(id) {
-    let email = localStorage.getItem("email");
-
     try {
-        let response = await fetch(`https://68218a3c259dad2655af85dc.mockapi.io/users?email=${email}`);
-        let users = await response.json();
+        const email = localStorage.getItem("email");
+        const response = await fetch(`https://68218a3c259dad2655af85dc.mockapi.io/users?email=${email}`);
+        const users = await response.json();
+        const user = users[0];
 
-        users.forEach(function (user) {
+        if (!user.enrolledCourses.includes(id)) {
+            user.enrolledCourses.push(id);
 
-            if (!user.enrolledCourses.includes(id)) {
-                user.enrolledCourses.push(id);
+            await fetch(`https://68218a3c259dad2655af85dc.mockapi.io/users/${user.id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ enrolledCourses: user.enrolledCourses })
+            });
+        }
 
-                fetch(`https://68218a3c259dad2655af85dc.mockapi.io/users/${user.id}`, {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        enrolledCourses: user.enrolledCourses
-                    })
-                });
-            }
-        });
+        getCourse(id);
+
     } catch (error) {
-        console.log(error);
+        console.error("Enrollment failed:", error);
     }
 }
+
+getCourse(courseId);
