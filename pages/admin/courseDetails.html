@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning - BrightPath</title>
-    <link rel="stylesheet" href="../../styles/user/learning.css">
+    <title>Course Details - BrightPath</title>
+
+    <link rel="stylesheet" href="../../styles/admin/courseDetails.css">
 
     <link rel="icon" href="../../images/top-logo.png">
 
@@ -20,16 +20,15 @@
         rel="stylesheet">
 
 </head>
-
 <body>
 
-    <header>
+      <header>
         <nav class="navbar">
             <img src="../../images/logo.png" alt="website logo" id="logo" class="logo" draggable="false">
 
             <p id="homeLetter" class="homeLetter">Home</p>
 
-            <p id="myCourseLetter" class="myCourseLetter">My Course</p>
+            <p id="addCourseLetter" class="addCoureseLetter">Add Course</p>
 
             <i class="fas fa-user profile" id="profile"></i>
         </nav>
@@ -39,7 +38,7 @@
 
         <i class="fa-solid fa-left-long arrowIcon" id="arrowIcon" title="Go back"></i>
 
-        <div class="learningContainer" id="learningContainer">
+        <div class="courseContainer" id="courseContainer">
             <h1 id="courseName" class="courseName"></h1>
 
             <div class="descriptionDiv">
@@ -47,17 +46,16 @@
 
             </div>
 
-            <div class="imgAndEnrollDiv">
+            <div class="imgAndEditCourseDiv">
                 <img alt="Course image" id="courseImg" class="courseImg" draggable="false">
-                <button id="enrollBtn" class="enrollBtn">Enroll Now</button>
+                <button id="editCourseBtn" class="editCourseBtn">Edit course</button>
             </div>
 
 
         </div>
 
     </main>
-
-    <script src="../../script/user/learning.js"></script>
+    
+    <script src="../../script/admin/courseDetails.js"></script>
 </body>
-
 </html>

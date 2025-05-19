@@ -5,6 +5,12 @@ logo.onclick = function () {
 }
 
 
+let arrowIcon = document.getElementById("arrowIcon");
+arrowIcon.onclick = function () {
+    window.history.back();
+}
+
+
 let addCoureseLetter = document.getElementById("addCoureseLetter");
 addCoureseLetter.onclick = function () {
     window.location.reload();

@@ -7,7 +7,7 @@ logo.onclick = function () {
 
 let addCoureseLetter = document.getElementById("addCoureseLetter");
 
-addCoureseLetter.onclick = function(){
+addCoureseLetter.onclick = function () {
     window.location.href = "addCourse.html"
 }
 
@@ -60,13 +60,16 @@ async function loadCourses() {
             deleteBtn.setAttribute("class", "deleteBtn");
             deleteBtn.innerText = "Delete";
 
-            editBtn.onclick = function(){
+            editBtn.onclick = function (e) {
+                e.stopPropagation();
                 window.location.href = `editCourse.html?id=${course.id}`;
-            }
+            };
 
-            deleteBtn.onclick = function () {
+            deleteBtn.onclick = function (e) {
+                e.stopPropagation();
                 deleteCourse(course.id, courseDiv);
             };
+
 
             editAndDeleteBtns.appendChild(editBtn);
             editAndDeleteBtns.appendChild(deleteBtn);
@@ -74,6 +77,10 @@ async function loadCourses() {
             courseDiv.appendChild(courseImgDiv);
             courseDiv.appendChild(courseDetails);
             courseDiv.appendChild(editAndDeleteBtns);
+
+            courseDiv.onclick = function () {
+                window.location.href = `courseDetails.html?id=${course.id}`;
+            }
 
             courseContainer.appendChild(courseDiv);
 
