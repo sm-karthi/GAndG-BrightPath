@@ -10,6 +10,11 @@ arrowIcon.onclick = function () {
     window.history.back();
 }
 
+let profile = document.getElementById("profile");
+profile.onclick = function(){
+    window.location.href = "../../pages/profile.html"
+}
+
 
 let addCoureseLetter = document.getElementById("addCoureseLetter");
 addCoureseLetter.onclick = function () {

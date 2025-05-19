@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - BrightPath</title>
+    <title>Profile - BrightPath</title>
 
-    <link rel="stylesheet" href="../../styles/admin/dashboard.css">
+    <link rel="stylesheet" href="../styles/profile.css">
 
     <link rel="icon" href="../../images/top-logo.png">
 
@@ -19,29 +19,37 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Anton+SC&family=Archivo:ital,wght@0,100..900;1,100..900&family=Dangrek&family=Foldit:wght@100..900&family=Kalnia+Glaze:wght@100..700&family=Kaushan+Script&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Shrikhand&family=Signika+Negative:wght@300..700&family=Yeseva+One&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body>
 
-     <header>
+    <header>
         <nav class="navbar">
             <img src="../../images/logo.png" alt="website logo" id="logo" class="logo" draggable="false">
 
-            <p id="addCoureseLetter" class="addCoureseLetter">Add Course</p>
+            <p id="homeLetter" class="homeLetter">Home</p>
+
+            <p id="myCourseLetter" class="myCourseLetter">My Course</p>
 
             <i class="fas fa-user profile" id="profile"></i>
         </nav>
     </header>
 
-    <main>
-        <div class="courseContainer" id="courseContainer">
+    <i class="fa-solid fa-left-long arrowIcon" id="arrowIcon" title="Go back"></i>
 
+    <main>
+        <div id="profileSection">
+            <img src="../images/profileImg.png" alt="Profile image">
+            <p id="userName">Loading...</p>
+            <p><strong>Email:</strong> <span id="userEmail">Loading...</span></p>
+            <p><strong>Role:</strong> <span id="userRole">Loading...</span></p>
+            <button id="logoutBtn">Logout</button>
         </div>
     </main>
 
-    <script src="../../script/admin/dashboard.js"></script>
-    <script src="../../script/auth.js"></script>
+
+    <script src="../script/profile.js"></script>
+
 </body>
 
 </html>

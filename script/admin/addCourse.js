@@ -21,6 +21,11 @@ homeLetter.onclick = function () {
     window.location.href = "dashboard.html";
 }
 
+let profile = document.getElementById("profile");
+profile.onclick = function(){
+    window.location.href = "../../pages/profile.html"
+}
+
 let addCourseForm = document.getElementById("addCourseForm");
 
 let moduleDiv = document.getElementById("moduleDiv");

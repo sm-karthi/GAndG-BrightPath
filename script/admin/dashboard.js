@@ -4,6 +4,11 @@ logo.onclick = function () {
     window.location.reload();
 }
 
+let profile = document.getElementById("profile");
+profile.onclick = function(){
+    window.location.href = "../../pages/profile.html"
+}
+
 
 let addCoureseLetter = document.getElementById("addCoureseLetter");
 

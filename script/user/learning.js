@@ -19,6 +19,11 @@ myCourseLetter.onclick = function () {
     window.location.href = "myCourse.html";
 }
 
+let profile = document.getElementById("profile");
+profile.onclick = function(){
+    window.location.href = "../../pages/profile.html"
+}
+
 let params = new URLSearchParams(window.location.search);
 let courseId = params.get("id");
 

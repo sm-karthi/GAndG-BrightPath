@@ -9,6 +9,11 @@ myCourseLetter.onclick = function () {
     window.location.href = "myCourse.html";
 }
 
+let profile = document.getElementById("profile");
+profile.onclick = function(){
+    window.location.href = "../../pages/profile.html"
+}
+
 let courseContainer = document.getElementById("courseContainer");
 
 async function loadCourses() {
